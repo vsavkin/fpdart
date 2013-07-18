@@ -11,7 +11,7 @@ part 'src/tap.dart';
 s(String name) => new Symbol(name);
 
 Map<Symbol, dynamic> symbolize(Map<String, dynamic> map){
-  return map.keys.fold({}, (memo, key){
+  return map.keys.fold(new Map<Symbol, dynamic>(), (memo, key){
     memo[s(key)] = map[key];
     return memo;
   });
@@ -22,7 +22,7 @@ class CallSink {
 
   CallSink(this.func);
 
-  call() => func([], {});
+  call() => func([], new Map<Symbol, dynamic>());
 
   noSuchMethod(Invocation c)
   => c.memberName == s("call") ?

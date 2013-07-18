@@ -6,7 +6,9 @@ partial(Function func,
 
   return callSink((posArgs, namedArgs){
     var pos = []..addAll(appliedPosArgs)..addAll(posArgs);
-    var named = {}..addAll(symbolize(appliedNamedArgs))..addAll(namedArgs);
+    var named = new Map<Symbol, dynamic>();
+    named.addAll(symbolize(appliedNamedArgs));
+    named.addAll(namedArgs);
     return Function.apply(func, pos, named);
   });
 }
