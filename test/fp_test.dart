@@ -7,6 +7,7 @@ part 'src/invoke_test.dart';
 part 'src/partial_test.dart';
 part 'src/compose_test.dart';
 part 'src/field_test.dart';
+part 'src/any_args_test.dart';
 part 'src/integration_test.dart';
 
 main(){
@@ -15,4 +16,5 @@ main(){
   testCompose();
   testField();
   testIntegration();
+  testAnyArgs();
 }
