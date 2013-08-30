@@ -8,15 +8,7 @@ part 'src/compose.dart';
 part 'src/field.dart';
 part 'src/tap.dart';
 part 'src/any_args.dart';
-
-s(String name) => new Symbol(name);
-
-Map<Symbol, dynamic> symbolize(Map<String, dynamic> map){
-  return map.keys.fold(new Map<Symbol, dynamic>(), (memo, key){
-    memo[s(key)] = map[key];
-    return memo;
-  });
-}
+part 'src/symbolize.dart';
 
 class CallSink {
   Function func;
