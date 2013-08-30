@@ -1,3 +1,8 @@
 name: fp
+version: 0.1.0
+author: Victor Savkin <vic.savkin@gmail.com>
+homepage: https://github.com/vsavkin/fpdart
+description: >
+  A library enabling functional programming in Dart similar to Underscore.js.
 dependencies:
   unittest: any
