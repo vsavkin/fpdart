@@ -1,5 +1,12 @@
 # FP in Dart
 
+## Symbolize
+
+    test("returns a map with symbolized keys", () {
+       var s = _.symbolize({"one" : 1});
+       expect(s[const Symbol("one")], equals(1));
+    });
+
 ## Invoke
 
     class Obj {
@@ -63,3 +70,13 @@
     add(a, b) => a + b;
     var addWithLogging = _.tap((a,b) => print("arguments are $a and $b"), add);
     expect(addWithLogging(1,2), equals(3)); //also prints arguments are 1 and 2
+
+## Any Args
+
+    test("ignores all args", () {
+      var c = () => "RES";
+      var anyArgsC = _.anyArgs(c);
+
+      expect(anyArgsC(1,2,3), equals("RES"));
+      expect(anyArgsC(one: 'one', two: 'two'), equals("RES"));
+    });
