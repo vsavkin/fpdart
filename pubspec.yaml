@@ -5,4 +5,4 @@ homepage: https://github.com/vsavkin/fpdart
 description: >
   A library enabling functional programming in Dart similar to Underscore.js.
 dependencies:
-  unittest: any
+  unittest: ">= 0.5.0"
