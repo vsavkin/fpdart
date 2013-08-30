@@ -2,7 +2,7 @@ part of fp_test;
 
 testAnyArgs() {
   group("[anyArgs]", () {
-    test("ignrores all args", () {
+    test("ignores all args", () {
       var c = () => "RES";
       var anyArgsC = _.anyArgs(c);
 
