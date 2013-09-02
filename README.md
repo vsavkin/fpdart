@@ -1,5 +1,7 @@
 # FP in Dart
 
+[![Build Status](https://drone.io/github.com/vsavkin/fpdart/status.png)](https://drone.io/github.com/vsavkin/fpdart/latest)
+
 ## Symbolize
 
     test("returns a map with symbolized keys", () {
