@@ -10,4 +10,10 @@ testPresent(){
       expect(_.present(12121), isTrue);
     });
   });
+
+  group("[compact]", (){
+    test("filters our all blank values", (){
+      expect(_.compact([1,2,null,3]), equals([1,2,3]));
+    });
+  });
 }
