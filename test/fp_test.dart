@@ -10,6 +10,7 @@ part 'src/compose_test.dart';
 part 'src/field_test.dart';
 part 'src/any_args_test.dart';
 part 'src/present_test.dart';
+part 'src/log_test.dart';
 
 main(){
   testSymbolize();
@@ -19,4 +20,5 @@ main(){
   testField();
   testAnyArgs();
   testPresent();
+  testLog();
 }

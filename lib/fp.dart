@@ -6,7 +6,7 @@ part 'src/invoke.dart';
 part 'src/partial.dart';
 part 'src/compose.dart';
 part 'src/field.dart';
-part 'src/tap.dart';
+part 'src/log.dart';
 part 'src/any_args.dart';
 part 'src/symbolize.dart';
 part 'src/present.dart';
