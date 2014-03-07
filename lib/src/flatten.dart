@@ -1,5 +1,5 @@
 part of fp;
 
-List flatten(List<List> list) => list.expand((i) => i);
+Iterable flatten(Iterable<Iterable> list) => list.expand((i) => i);
 
-flatMap(Function func) => (List<List> list) => flatten(list.map(func));
+flatMap(Function func) => (Iterable<Iterable> list) => flatten(list.map(func));

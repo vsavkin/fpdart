@@ -1,5 +1,5 @@
 part of fp;
 
-first(List list) => list.first;
+first(Iterable list) => list.first;
 
-List rest(List list) => list.skip(1);
+Iterable rest(Iterable list) => list.skip(1);
