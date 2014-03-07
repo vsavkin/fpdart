@@ -1,9 +1,9 @@
 name: fp
-version: 0.2.0
+version: 0.3.0
 author: Victor Savkin <vic.savkin@gmail.com>
 homepage: https://github.com/vsavkin/fpdart
 description: >
-  A library enabling functional programming in Dart.
+  Functional programming helpers for Dart.
 dependencies:
   unittest: ">= 0.5.0"
 environment:
