@@ -12,6 +12,8 @@ part 'src/any_args_test.dart';
 part 'src/present_test.dart';
 part 'src/log_test.dart';
 part 'src/common_functions_test.dart';
+part 'src/seq_functions_test.dart';
+part 'src/flatten_test.dart';
 
 main(){
   testSymbolize();
@@ -23,4 +25,6 @@ main(){
   testPresent();
   testLog();
   testCommonFunctions();
+  testSeqFunctions();
+  testFlatten();
 }
