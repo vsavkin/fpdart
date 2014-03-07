@@ -7,25 +7,21 @@ class InvokeTest {
 
 testInvoke(){
   group("[invoke]", (){
-    var obj;
-
-    setUp((){
-      obj = new InvokeTest();
-    });
+    obj() => new InvokeTest();
 
     test("invokes a method without arguments", (){
-      var invoke = _.invoke("noArguments");
-      expect(invoke(obj), equals("no arguments"));
+      final invoke = _.invoke("noArguments");
+      expect(invoke(obj()), equals("no arguments"));
     });
 
     test("invokes a method with arguments", (){
-      var invoke = _.invoke("withArguments", ["pos"]);
-      expect(invoke(obj), equals("pos"));
+      final invoke = _.invoke("withArguments", ["pos"]);
+      expect(invoke(obj()), equals("pos"));
     });
 
     test("throws an exception when invalid method name", (){
-      var invoke = _.invoke("invalid");
-      expect(() => invoke(obj), throws);
+      final invoke = _.invoke("invalid");
+      expect(() => invoke(obj()), throws);
     });
   });
 }

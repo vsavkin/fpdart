@@ -5,8 +5,8 @@ partial(Function func,
         Map<String,dynamic> appliedNamedArgs = const {}]){
 
   return callSink((posArgs, namedArgs){
-    var pos = []..addAll(appliedPosArgs)..addAll(posArgs);
-    var named = new Map<Symbol, dynamic>();
+    final pos = []..addAll(appliedPosArgs)..addAll(posArgs);
+    final named = new Map<Symbol, dynamic>();
     named.addAll(symbolize(appliedNamedArgs));
     named.addAll(namedArgs);
     return Function.apply(func, pos, named);
