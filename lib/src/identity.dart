@@ -1,3 +1,3 @@
 part of fp;
 
-identity(obj) => obj;
+T identity(T obj) => obj;

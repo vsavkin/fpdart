@@ -1,6 +1,6 @@
 part of fp;
 
-compose(List<Function> funcs)
+Function compose(List<Function> funcs)
   => callSink((posArgs, namedArgs){
     final reversed = funcs.reversed;
     final firstResult = Function.apply(reversed.first, posArgs, namedArgs);

@@ -1,6 +1,6 @@
 part of fp;
 
-partial(Function func,
+Function partial(Function func,
         [List appliedPosArgs = const [],
         Map<String,dynamic> appliedNamedArgs = const {}]){
 

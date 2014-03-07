@@ -1,4 +1,4 @@
 part of fp;
 
-anyArgs(Function func)
+Function anyArgs(Function func)
   => callSink((posArgs, namedArgs) => func());

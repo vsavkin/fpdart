@@ -1,6 +1,6 @@
 part of fp;
 
-s(String name) => new Symbol(name);
+Symbol s(String name) => new Symbol(name);
 
 Map<Symbol, dynamic> symbolize(Map<String, dynamic> map){
   return map.keys.fold(new Map<Symbol, dynamic>(), (memo, key){
