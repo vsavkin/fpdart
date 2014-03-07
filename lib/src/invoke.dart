@@ -1,7 +1,7 @@
 part of fp;
 
-invoke(String memberName, [List positionalArguments = const []])
+invoke(String memberName, [List posArgs = const [], Map namedArgs = const {}])
   => (self)
     => reflect(self).
-       invoke(s(memberName), positionalArguments).
+       invoke(s(memberName), posArgs, symbolize(namedArgs)).
        reflectee;
