@@ -23,7 +23,3 @@ firstWhere(Function func) => (List list) => list.firstWhere(func);
 lastWhere(Function func) => (List list) => list.lastWhere(func);
 
 skip(int n) => (List list) => list.skip(n);
-
-first(List list) => list.first;
-
-rest(List list) => list.skip(1);
