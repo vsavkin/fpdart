@@ -11,6 +11,7 @@ part 'src/field_test.dart';
 part 'src/any_args_test.dart';
 part 'src/present_test.dart';
 part 'src/log_test.dart';
+part 'src/common_functions_test.dart';
 
 main(){
   testSymbolize();
@@ -21,4 +22,5 @@ main(){
   testAnyArgs();
   testPresent();
   testLog();
+  testCommonFunctions();
 }

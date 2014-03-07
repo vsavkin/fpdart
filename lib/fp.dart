@@ -10,6 +10,7 @@ part 'src/log.dart';
 part 'src/any_args.dart';
 part 'src/symbolize.dart';
 part 'src/present.dart';
+part 'src/common_functions.dart';
 
 class CallSink {
   Function func;
