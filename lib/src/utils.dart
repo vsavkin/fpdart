@@ -8,3 +8,7 @@ Map<Symbol, dynamic> symbolize(Map<String, dynamic> map){
     return memo;
   });
 }
+
+bool present(_) => _ != null;
+
+identity(obj) => obj;

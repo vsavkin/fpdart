@@ -3,30 +3,20 @@ library fp_test;
 import 'package:unittest/unittest.dart';
 import 'package:fp/fp.dart' as _;
 
-part 'src/symbolize_test.dart';
-part 'src/invoke_test.dart';
-part 'src/partial_test.dart';
+part 'src/common_test.dart';
 part 'src/compose_test.dart';
-part 'src/field_test.dart';
-part 'src/any_args_test.dart';
-part 'src/present_test.dart';
-part 'src/log_test.dart';
-part 'src/common_functions_test.dart';
-part 'src/seq_functions_test.dart';
-part 'src/flatten_test.dart';
-part 'src/generators_test.dart';
+part 'src/decorators_test.dart';
+part 'src/invoke_test.dart';
+part 'src/iterable_utils_test.dart';
+part 'src/partial_test.dart';
+part 'src/utils_test.dart';
 
 main(){
-  testSymbolize();
-  testInvoke();
-  testPartial();
+  testCommon();
   testCompose();
-  testField();
-  testAnyArgs();
-  testPresent();
-  testLog();
-  testCommonFunctions();
-  testSeqFunctions();
-  testFlatten();
-  testGenerators();
+  testDecorators();
+  testInvoke();
+  testIterableUtils();
+  testPartial();
+  testUtils();
 }

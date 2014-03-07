@@ -1,6 +1,6 @@
 part of fp_test;
 
-testCommonFunctions(){
+testCommon(){
   group("[common functions]", (){
     test("map", (){
       final multiplyByTwo = _.map((n) => n * 2);

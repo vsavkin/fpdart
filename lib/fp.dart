@@ -2,18 +2,13 @@ library fp;
 
 import 'dart:mirrors';
 
-part 'src/invoke.dart';
-part 'src/partial.dart';
+part 'src/common.dart';
 part 'src/compose.dart';
-part 'src/field.dart';
-part 'src/log.dart';
-part 'src/any_args.dart';
-part 'src/symbolize.dart';
-part 'src/present.dart';
-part 'src/common_functions.dart';
-part 'src/seq_functions.dart';
-part 'src/flatten.dart';
-part 'src/generators.dart';
+part 'src/decorators.dart';
+part 'src/invoke.dart';
+part 'src/iterable_utils.dart';
+part 'src/partial.dart';
+part 'src/utils.dart';
 
 class CallSink {
   Function func;
