@@ -59,5 +59,18 @@ testCommonFunctions(){
       final lastEven = _.lastWhere((n) => n % 2 == 0);
       expect(lastEven([1,2,3,4]), equals(4));
     });
+
+    test("skip", (){
+      final skip2 = _.skip(2);
+      expect(skip2([1,2,3,4]), equals([3,4]));
+    });
+
+    test("first", (){
+      expect(_.first([1,2,3,4]), equals(1));
+    });
+
+    test("rest", (){
+      expect(_.rest([1,2,3,4]), equals([2,3,4]));
+    });
   });
 }
