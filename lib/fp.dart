@@ -13,6 +13,7 @@ part 'src/present.dart';
 part 'src/common_functions.dart';
 part 'src/seq_functions.dart';
 part 'src/flatten.dart';
+part 'src/generators.dart';
 
 class CallSink {
   Function func;

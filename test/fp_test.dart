@@ -14,6 +14,7 @@ part 'src/log_test.dart';
 part 'src/common_functions_test.dart';
 part 'src/seq_functions_test.dart';
 part 'src/flatten_test.dart';
+part 'src/generators_test.dart';
 
 main(){
   testSymbolize();
@@ -27,4 +28,5 @@ main(){
   testCommonFunctions();
   testSeqFunctions();
   testFlatten();
+  testGenerators();
 }
