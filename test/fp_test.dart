@@ -9,6 +9,7 @@ part 'src/partial_test.dart';
 part 'src/compose_test.dart';
 part 'src/field_test.dart';
 part 'src/any_args_test.dart';
+part 'src/present_test.dart';
 
 main(){
   testSymbolize();
@@ -17,4 +18,5 @@ main(){
   testCompose();
   testField();
   testAnyArgs();
+  testPresent();
 }
