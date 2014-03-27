@@ -12,3 +12,25 @@ Function partial(Function func,
     return Function.apply(func, pos, named);
   });
 }
+
+Function curry(Function func){
+  final allParams = (reflect(func) as ClosureMirror).function.parameters;
+  final numberOfRequiredParams = allParams.where((_) => !_.isOptional).length;
+
+  withSavedArgs(List savedPosArgs, Map savedNamedArgs){
+    return callSink((posArgs, namedArgs){
+      final pos = []..addAll(savedPosArgs)..addAll(posArgs);
+      final named = new Map<Symbol, dynamic>();
+      named.addAll(savedNamedArgs);
+      named.addAll(namedArgs);
+
+      if(pos.length >= numberOfRequiredParams) {
+        return Function.apply(func, pos, named);
+      } else {
+        return withSavedArgs(pos, named);
+      }
+    });
+  }
+
+  return withSavedArgs([], {});
+}

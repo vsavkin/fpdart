@@ -4,7 +4,43 @@ partialPosTest(pos1, pos2) => "$pos1 $pos2";
 
 partialNamedTest({named1, named2}) => "$named1 $named2";
 
+partialPosTestWithOptional(pos1, [pos2='pos2']) => "$pos1 $pos2";
+
+partialPosAndNamedTest(pos1, {named: 'named'}) => "$pos1 $named";
+
 testPartial() {
+  group("[curry]", (){
+    test("makes a function", () {
+      final c = _.curry(partialPosTest);
+
+      expect(c("pos1", "pos2"), equals("pos1 pos2"));
+      expect(c("pos1")("pos2"), equals("pos1 pos2"));
+      expect(c()("pos1")("pos2"), equals("pos1 pos2"));
+    });
+
+    test("acts as a partial", (){
+      final partial = _.curry(partialPosTest)("pos1");
+
+      expect(partial("pos2"), equals("pos1 pos2"));
+      expect(partial("pos3"), equals("pos1 pos3"));
+    });
+
+    test("supports optional parameters", (){
+      final c = _.curry(partialPosTestWithOptional);
+
+      expect(c("pos1"), equals("pos1 pos2"));
+      expect(c("pos1", "pos3"), equals("pos1 pos3"));
+    });
+
+    test("supports named parameters", (){
+      final c = _.curry(partialPosAndNamedTest);
+
+      expect(c("pos1"), equals("pos1 named"));
+      expect(c("pos1", named: "named2"), equals("pos1 named2"));
+      expect(c(named: "named2")("pos1"), equals("pos1 named2"));
+    });
+  });
+
   group("[partial]", () {
     group("[positional]", () {
       test("partially applies an argument", () {
