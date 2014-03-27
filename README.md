@@ -74,6 +74,51 @@ Composes two or more functions.
 
 
 
+## Curry
+
+This is a very powerful helper that transforms a function taking multiple arguments into a chain of functions taking zero or more arguments.
+
+    func(pos1, pos2) => "$pos1 $pos2";
+    final c = _.curry(func);
+
+    expect(c("pos1", "pos2"), equals("pos1 pos2"));
+    expect(c("pos1")("pos2"), equals("pos1 pos2"));
+    expect(c()("pos1")()("pos2"), equals("pos1 pos2"));
+
+You can think about it as follows:
+The function `c` remembers all the given arguments. When it gets all the needed arguments, the original function will be called.
+
+Obviously, there is no real remembering happening, which is demonstrated here:
+
+    func(pos1, pos2, pos3) => "$pos1 $pos2 $pos3";
+    final partial = _.curry(func)("pos1");
+
+    expect(partial("pos2")("pos3"), equals("pos1 pos2 pos3"));
+    expect(partial("pos4")("pos5"), equals("pos1 pos4 pos5"));
+
+
+The `curry` helper also supports optional parameters:
+
+    func(pos1, [pos2='pos2']) => "$pos1 $pos2";
+    final c = _.curry(func);
+
+    expect(c("pos1"), equals("pos1 pos2"));
+    expect(c("pos1", "pos3"), equals("pos1 pos3"));
+
+And named parameters:
+
+    func(pos1, {named: 'named'}) => "$pos1 $named";
+    final c = _.curry(func);
+
+    expect(c("pos1"), equals("pos1 named"));
+    expect(c("pos1", named: "named2"), equals("pos1 named2"));
+
+Named parameters can be applied in any order:
+
+    expect(c(named: "named2")("pos1"), equals("pos1 named2"));
+
+
+
 ## Partial
 
 Partially applies a function.
@@ -85,6 +130,7 @@ Partially applies a function.
 
     var partial = _.partial(func, [], {"named" : "named1"});
     partial("pos1", "pos2") => returns "pos1 pos2 named1";
+
 
 
 ## Misc Iterable Utils
