@@ -10,7 +10,7 @@ Add the DartFP dependency to your project’s pubspec.yaml.
 
     name: my_project
     dependencies:
-      fp: any
+      fp: '>=0.4.1 <0.5.0'
 
 Then, run `pub install`.
 
@@ -52,23 +52,23 @@ This group of helpers allows you to call a function on a collection of objects.
 
     var obj = new Ojb();
 
-    _.invoke("noArguments")(obj) => returns "noArguments"
-    _.invoke("withPosArguments", ["pos"])(obj) => returns "pos"
-    _.invoke("withNamedArguments", [], {"key": "value"})(obj) => returns "value"
+    _.invoke(#noArguments)(obj) => returns "noArguments"
+    _.invoke(#withPosArguments, ["pos"])(obj) => returns "pos"
+    _.invoke(#withNamedArguments, [], {#key: "value"})(obj) => returns "value"
 
     obj.field = 'value';
-    _.getField("field")(obj) => returns "value"
+    _.getField(#field)(obj) => returns "value"
 
-    _.setField("field", "new")(obj) => sets the field to "new"
+    _.setField(#field, "new")(obj) => sets the field to "new"
 
-
+You can pass strings instead of symbols.
 
 
 ## Compose
 
 Composes two or more functions.
 
-    var compose = _.compose([_.getField("length"), _.invoke("trim")]);
+    var compose = _.compose([_.getField(#length), _.invoke(#trim)]);
     compose("   abc  ") => returns 3
 
 
