@@ -1,25 +1,73 @@
 part of fp;
 
-forEach(Function func) => (Iterable list) => list.forEach(func);
+/**
+ * Transforms `forEach` method into `forEach` function.
+ * Usage: `forEach(fn)(iter)`
+ */
+forEach(Function func) => (Iterable iter) => iter.forEach(func);
 
-map(Function func) => (Iterable list) => list.map(func);
+/**
+ * Transforms `map` method into `map` function.
+ * Usage: `map(fn)(iter)`
+ */
+map(Function func) => (Iterable iter) => iter.map(func);
 
-reduce(Function func) => (Iterable list) => list.reduce(func);
+/**
+ * Transforms `reduce` method into `reduce` function.
+ * Usage: `reduce(fn)(iter)`
+ */
+reduce(Function func) => (Iterable iter) => iter.reduce(func);
 
-fold(dynamic initial, Function func) => (Iterable list) => list.fold(initial, func);
+/**
+ * Transforms `fold` method into `fold` function.
+ * Usage: `fold(init, fn)(iter)`
+ */
+fold(dynamic initial, Function func) => (Iterable iter) => iter.fold(initial, func);
 
-any(Function func) => (Iterable list) => list.any(func);
+/**
+ * Transforms `any` method into `any` function.
+ * Usage: `any(fn)(iter)`
+ */
+any(Function func) => (Iterable iter) => iter.any(func);
 
-contains(dynamic element) => (Iterable list) => list.contains(element);
+/**
+ * Transforms `contains` method into `contains` function.
+ * Usage: `contains(el)(iter)`
+ */
+contains(dynamic element) => (Iterable iter) => iter.contains(element);
 
-elementAt(int index) => (Iterable list) => list.elementAt(index);
+/**
+ * Transforms `elementAt` method into `elementAt` function.
+ * Usage: `elementAt(index)(iter)`
+ */
+elementAt(int index) => (Iterable iter) => iter.elementAt(index);
 
+/**
+ * Transforms `[]` method into a function.
+ * Usage: `getByKey(key)(map)`
+ */
 getByKey(dynamic key) => (Map map) => map[key];
 
-where(Function func) => (Iterable list) => list.where(func);
+/**
+ * Transforms `where` method into `where` function.
+ * Usage: `where(fn)(iter)`
+ */
+where(Function func) => (Iterable iter) => iter.where(func);
 
-firstWhere(Function func) => (Iterable list) => list.firstWhere(func);
+/**
+ * Transforms `firstWhere` method into `firstWhere` function.
+ * Usage: `firstWhere(fn)(iter)`
+ */
+firstWhere(Function func) => (Iterable iter) => iter.firstWhere(func);
 
-lastWhere(Function func) => (Iterable list) => list.lastWhere(func);
+/**
+ * Transforms `lastWhere` method into `lastWhere` function.
+ * Usage: `lastWhere(fn)(iter)`
+ */
+lastWhere(Function func) => (Iterable iter) => iter.lastWhere(func);
 
-skip(int n) => (Iterable list) => list.skip(n);
+/**
+ * Transforms `skip` method into `skip` function.
+ * Usage: `skip(n)(iter)`
+ */
+skip(int n) => (Iterable iter) => iter.skip(n);

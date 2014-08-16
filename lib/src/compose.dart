@@ -1,5 +1,9 @@
 part of fp;
 
+/**
+ * Composes two or more functions.
+ * Usage: `compose([f2, f1])(arg)` is the same as `f2(f1(arg))`
+ */
 Function compose(List<Function> funcs)
   => callSink((posArgs, namedArgs){
     final reversed = funcs.reversed;
