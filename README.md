@@ -10,7 +10,7 @@ Add the DartFP dependency to your project’s pubspec.yaml.
 
     name: my_project
     dependencies:
-      fp: '>=0.4.1 <0.5.0'
+      fp: '>=0.4.2 <0.5.0'
 
 Then, run `pub install`.
 
