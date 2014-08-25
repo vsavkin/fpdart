@@ -29,6 +29,13 @@ testIterableUtils(){
       });
     });
 
+    group("[group by]", (){
+      test("example", (){
+        final grouped = _.groupBy([1,2,3,4], (_) => _ % 2 == 0);
+        expect(grouped, equals({true: [2,4], false: [1,3]}));
+      });
+    });
+
     group("[seq functions]", (){
       test("first", (){
         expect(_.first([1,2,3,4]), equals(1));

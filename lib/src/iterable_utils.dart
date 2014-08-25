@@ -57,3 +57,19 @@ Iterable zip(Iterable a, Iterable b) {
 
   return list;
 }
+
+/**
+ * Groups all items in the iterable using the provided functions.
+ *
+ * Example:
+ *
+ * groupBy([1,2,3,4], isEven); //{true: [2,4], false: [1,3]}
+ */
+Map groupBy(Iterable a, Function fn) {
+  return a.fold({}, (map, curr) {
+    final key = fn(curr);
+    map.putIfAbsent(key, () => []);
+    map[key].add(curr);
+    return map;
+  });
+}
