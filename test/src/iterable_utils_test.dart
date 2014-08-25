@@ -22,6 +22,13 @@ testIterableUtils(){
       });
     });
 
+    group("[zip]", (){
+      test("example", (){
+        final zipped = _.zip([1,2], [3,4,5]);
+        expect(zipped, equals([[1,3], [2,4]]));
+      });
+    });
+
     group("[seq functions]", (){
       test("first", (){
         expect(_.first([1,2,3,4]), equals(1));

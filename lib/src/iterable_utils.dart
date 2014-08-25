@@ -41,3 +41,19 @@ first(Iterable list) => list.first;
  * Returns all the elements of an iterable, except the first one.
  */
 Iterable rest(Iterable list) => list.skip(1);
+
+/**
+ * Zips two iterables into one.
+ */
+Iterable zip(Iterable a, Iterable b) {
+  final list = [];
+
+  final ia = a.iterator;
+  final ib = b.iterator;
+
+  while(ia.moveNext() && ib.moveNext()) {
+    list.add([ia.current, ib.current]);
+  }
+
+  return list;
+}
