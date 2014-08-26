@@ -59,7 +59,7 @@ Iterable zip(Iterable a, Iterable b) {
 }
 
 /**
- * Groups all items in the iterable using the provided functions.
+ * Groups all items in the iterable using the provided function.
  *
  * Example:
  *

@@ -160,6 +160,14 @@ The `rest` helper skips the first element:
 
     _.rest([1,2,3]); // returns [2,3]
 
+The `zip` zips two iterables into one:
+
+    _.zip([1,2],[3,4,5]); // returns [[1,3], [2,4]]
+
+The `groupBy` helper groups all items in the iterable using the provided function.
+
+    groupBy([1,2,3,4], isEven); //{true: [2,4], false: [1,3]}
+
 
 
 ## Misc Function Decorators
