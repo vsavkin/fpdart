@@ -50,7 +50,7 @@ This group of helpers allows you to call a function on a collection of objects.
       withNamedArguments({key}) => key;
     }
 
-    var obj = new Ojb();
+    var obj = new Obj();
 
     _.invoke(#noArguments)(obj); // returns "noArguments"
     _.invoke(#withPosArguments, ["pos"])(obj); // returns "pos"
